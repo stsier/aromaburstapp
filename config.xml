@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.tsier.aromaburst" version="1.1.6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Aromaburst</name>
+    <description>
+        explore aromas
+    </description>
+    <author email="contact-aromaburst@tsier.com" href="https://aromaburst.tsier.com">
+         Tsier Soft
+    </author>
+    <preference name="orientation" value="portrait" />
+    <preference name="target-device" value="universal" />
+    <preference name="Fullscreen" platform="android" value="false" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="prerendered-icon" value="true" />
+    <preference name="stay-in-webview" value="false" />
+    <preference name="detect-data-types" value="true" />
+    <preference name="exit-on-suspend" value="false" />
+    <preference name="show-splash-screen-spinner" value="false" />
+    <preference name="auto-hide-splash-screen" value="true" />
+    <preference name="disable-cursor" value="false" />
+    <preference name="android-installLocation" value="internalOnly" />
+    <preference name="android-minSdkVersion" value="24" />
+    <preference name="deployment-target" value="10.0.0" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="BackgroundColor" value="0xffffff" />
+    <config-file parent="CFBundleURLTypes" target="*-Info.plist">
+        <array>
+            <dict>
+                <key>CFBundleURLSchemes</key>
+                <array>
+                    <string>aromaburst</string>
+                </array>
+                <key>LSApplicationQueriesSchemes</key>
+                <array>
+                    <string>fb</string>
+                    <string>fbapi</string>
+                    <string>fb-messenger-api</string>
+                    <string>fbauth2</string>
+                    <string>fbshareextension</string>
+                </array>
+            </dict>
+        </array>
+    </config-file>
+    <plugin name="cordova-plugin-statusbar" />
+    <plugin name="cordova-plugin-device" />
+    <plugin name="cordova-plugin-camera" />
+    <plugin name="cordova-plugin-geolocation" />
+    <preference name="StatusBarBackgroundColor" value="#e5ab1e" />
+    <plugin name="cordova-plugin-streaming-media" />
+    <plugin name="cordova-plugin-photos" />
+    <platform name="ios">
+        <plugin name="cordova-plugin-background-task" />
+    </platform>
+    <preference name="GOOGLE_MAPS_ANDROID_API_KEY" value="AIzaSyDxhe4r6kirW7-6h7No08lmEg-CILQi-8w" />
+    <preference name="GOOGLE_MAPS_IOS_API_KEY" value="AIzaSyAwDf7q_s6kR2jLuEEKjplN3kT6c_zzCno" />
+    <platform name="ios">
+        <config-file overwrite="true" parent="NSLocationWhenInUseUsageDescription" platform="ios" target="*-Info.plist">
+            <string>Please allow location access to show nearby wine retailers. L'application a besoin de la géolocalisation pour afficher les cavistes autour de vous.</string>
+        </config-file>
+        <config-file overwrite="true" parent="NSLocationAlwaysUsageDescription" platform="ios" target="*-Info.plist">
+            <string>Please allow location access to show nearby wine retailers. L'application a besoin de la géolocalisation pour afficher les cavistes autour de vous.</string>
+        </config-file>
+        <config-file mode="add" parent="ITSAppUsesNonExemptEncryption" platform="ios">
+            <false />
+        </config-file>
+        <edit-config file="*-Info.plist" mode="merge" target="NSCameraUsageDescription">
+            <string>needs camera access to take pictures of wine bottles</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryUsageDescription">
+            <string>needs photo library access to get pictures of wine bottles from there</string>
+        </edit-config>
+        <edit-config file="*-Info.plist" mode="merge" target="NSPhotoLibraryAddUsageDescription">
+            <string>needs photo library access to save pictures of wine bottles there</string>
+        </edit-config>
+    </platform>
+    <feature name="Geolocation">
+        <param name="ios-package" value="CDVLocation" />
+    </feature>
+    <platform name="android">
+        <config-file parent="CFBundleURLTypes" target="*-Info.plist">
+            <array>
+                <dict>
+                    <key>CFBundleURLSchemes</key>
+                    <array>
+                        <string>tangodose</string>
+                    </array>
+                    <key>LSApplicationQueriesSchemes</key>
+                    <array>
+                        <string>fb</string>
+                        <string>fbapi</string>
+                        <string>fb-messenger-api</string>
+                        <string>fbauth2</string>
+                        <string>fbshareextension</string>
+                    </array>
+                </dict>
+            </array>
+        </config-file>
+    </platform>
+    <platform name="android">
+        <icon src="android/drawable/icon.png" />
+        <icon density="ldpi" src="android/drawable-ldpi/icon.png" />
+        <icon density="mdpi" src="android/drawable-mdpi/icon.png" />
+        <icon density="hdpi" src="android/drawable-hdpi/icon.png" />
+        <icon density="xhdpi" src="android/drawable-xhdpi/icon.png" />
+        <icon density="xxhdpi" src="android/drawable-xxhdpi/icon.png" />
+        <icon density="xxxhdpi" src="android/drawable-xxxhdpi/icon.png" />
+        <splash src="android/drawable/screen.png" />
+        <splash density="land-ldpi" src="android/drawable-land-ldpi/screen.png" />
+        <splash density="land-mdpi" src="android/drawable-land-mdpi/screen.png" />
+        <splash density="land-hdpi" src="android/drawable-land-hdpi/screen.png" />
+        <splash density="land-xhdpi" src="android/drawable-land-xhdpi/screen.png" />
+        <splash density="land-xxhdpi" src="android/drawable-land-xxhdpi/screen.png" />
+        <splash density="land-xxxhdpi" src="android/drawable-land-xxxhdpi/screen.png" />
+        <splash density="port-ldpi" src="android/drawable-ldpi/screen.png" />
+        <splash density="port-mdpi" src="android/drawable-mdpi/screen.png" />
+        <splash density="port-hdpi" src="android/drawable-hdpi/screen.png" />
+        <splash density="port-xhdpi" src="android/drawable-xhdpi/screen.png" />
+        <splash density="port-xxhdpi" src="android/drawable-xxhdpi/screen.png" />
+        <splash density="port-xxxhdpi" src="android/drawable-xxxhdpi/screen.png" />
+    </platform>
+    <platform name="ios">
+        <icon height="20" platform="ios" src="iOS/icons/Icon-20x20@1x.png" width="20" />
+        <icon height="40" platform="ios" src="iOS/icons/Icon-20x20@2x.png" width="40" />
+        <icon height="60" platform="ios" src="iOS/icons/Icon-20x20@3x.png" width="60" />
+        <icon height="29" platform="ios" src="iOS/icons/Icon-29x29@1x.png" width="20" />
+        <icon height="58" platform="ios" src="iOS/icons/Icon-29x29@2x.png" width="58" />
+        <icon height="87" platform="ios" src="iOS/icons/Icon-29x29@3x.png" width="87" />
+        <icon height="80" platform="ios" src="iOS/icons/Icon-40x40@2x.png" width="80" />
+        <icon height="120" platform="ios" src="iOS/icons/Icon-40x40@3x.png" width="120" />
+        <icon height="120" platform="ios" src="iOS/icons/Icon-60x60@2x.png" width="120" />
+        <icon height="180" platform="ios" src="iOS/icons/Icon-60x60@3x.png" width="180" />
+        <icon height="76" platform="ios" src="iOS/icons/Icon-76x76@1x.png" width="76" />
+        <icon height="152" platform="ios" src="iOS/icons/Icon-76x76@2x.png" width="152" />
+        <icon height="167" platform="ios" src="iOS/icons/Icon-83.5@2x.png" width="167" />
+        <icon height="1024" platform="ios" src="iOS/icons/Icon-marketing-1024x1024.png" width="1024" />
+        <splash height="960" platform="ios" src="iOS/splashscreen/LaunchImage~iphone_640x960.png" width="640" />
+        <splash height="480" platform="ios" src="iOS/splashscreen/LaunchImage~iphone-320x480.png" width="320" />
+        <splash height="2008" platform="ios" src="iOS/splashscreen/LaunchImage~ipad.png" width="1536" />
+        <splash height="1004" platform="ios" src="iOS/splashscreen/LaunchImage.png" width="768" />
+        <splash height="1024" platform="ios" src="iOS/splashscreen/LaunchImage-Portrait~ipad_768x1024.png" width="768" />
+        <splash height="2732" platform="ios" src="iOS/splashscreen/LaunchImage-Portrait@2x~ipad_2048x2732.png" width="2048" />
+        <splash height="2224" platform="ios" src="iOS/splashscreen/LaunchImage-Portrait@2x~ipad_1668x2224.png" width="1668" />
+        <splash height="1024" platform="ios" src="iOS/splashscreen/LaunchImage-Portrait@2x~ipad_1536x2048.png" width="1536" />
+        <splash height="960" platform="ios" src="iOS/splashscreen/LaunchImage-Portrait@2x~ipad_1536x2008.png" width="1536" />
+        <splash height="768" platform="ios" src="iOS/splashscreen/LaunchImage-Landscape~ipad_1024x768.png" width="1024" />
+        <splash height="748" platform="ios" src="iOS/splashscreen/LaunchImage-Landscape~ipad_1024x748.png" width="1024" />
+        <splash height="2048" platform="ios" src="iOS/splashscreen/LaunchImage-Landscape@2x~ipad_2732x2048.png" width="2732" />
+        <splash height="1668" platform="ios" src="iOS/splashscreen/LaunchImage-Landscape@2x~ipad_2224x1668.png" width="2224" />
+        <splash height="1536" platform="ios" src="iOS/splashscreen/LaunchImage-Landscape@2x~ipad_2048x1536.png" width="2048" />
+        <splash height="1496" platform="ios" src="iOS/splashscreen/LaunchImage-Landscape@2x~ipad_2048x1496.png" width="2048" />
+        <splash height="1792" platform="ios" src="iOS/splashscreen/LaunchImage-828@2x~iphoneXr-portrait_828x1792.png" width="828" />
+        <splash height="1334" platform="ios" src="iOS/splashscreen/LaunchImage-750@2x~iphone6-portrait_750x1334.png" width="750" />
+        <splash height="750" platform="ios" src="iOS/splashscreen/LaunchImage-750@2x~iphone6-landscape_1334x750.png" width="1334" />
+        <splash height="1136" platform="ios" src="iOS/splashscreen/LaunchImage-568h@2x~iphone_640x1136.png" width="640" />
+        <splash height="1242" platform="ios" src="iOS/splashscreen/LaunchImage-2688@3x~iphoneXsMax-landscape_2688x1242.png" width="2688" />
+        <splash height="1125" platform="ios" src="iOS/splashscreen/LaunchImage-2436@3x~iphoneX-landscape_2436x1125.png" width="320" />
+        <splash height="828" platform="ios" src="iOS/splashscreen/LaunchImage-1792@2x~iphoneXr-landscape_1792x828.png" width="1792" />
+        <splash height="2688" platform="ios" src="iOS/splashscreen/LaunchImage-1242@3x~iphoneXsMax-portrait_1242x2688.png" width="1242" />
+        <splash height="2208" platform="ios" src="iOS/splashscreen/LaunchImage-1242@3x~iphone6s-portrait_1242x2208.png" width="1242" />
+        <splash height="1242" platform="ios" src="iOS/splashscreen/LaunchImage-1242@3x~iphone6s-landscape_2208x1242.png" width="2208" />
+        <splash height="2436" platform="ios" src="iOS/splashscreen/LaunchImage-1125@3x~iphoneX-portrait_1125x2436.png" width="1125" />
+    </platform>
+    <access allows-arbitrary-loads-for-media="true" allows-arbitrary-loads-in-web-content="true" allows-local-networking="true" origin="*" platform="ios" />
+    <plugin name="cordova-plugin-whitelist" />
+    <access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="localhost://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+    <platform name="android">
+        <allow-navigation href="*" />
+    </platform>
+</widget>
